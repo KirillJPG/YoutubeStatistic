@@ -1,7 +1,9 @@
 import React from 'react';
-import './style/index.css';
+import "./style/_variables.module.scss"
 import { RouteProvider } from './providers/BaseRouting/ui/RouteProvider';
 import { ApiProvider } from './providers/QueryClient';
+import "./style/baseStyle.css"
+
 function App() {
   return (
     <ApiProvider>

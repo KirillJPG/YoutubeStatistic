@@ -13,18 +13,22 @@
     "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.5",
     "axios": "^1.9.0",
+    "clsx": "^2.1.1",
+    "craco": "^0.0.3",
     "react": "^19.1.0",
+    "react-css-modules": "^4.7.11",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.6.2",
     "react-scripts": "5.0.1",
+    "scss": "^0.2.4",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-      "start": "craco start",
-      "build": "craco build",
-      "test":  "craco test",
-      "eject": "craco eject"
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "craco eject"
   },
   "eslintConfig": {
     "extends": [
@@ -45,6 +49,10 @@
     ]
   },
   "devDependencies": {
-    "@types/react-router-dom": "^5.3.3"
-  } 
+    "@types/css-modules": "^1.0.5",
+    "@types/json-schema": "^7.0.15",
+    "@types/react-router-dom": "^5.3.3",
+    "typed-scss-modules": "^8.1.1",
+    "typescript-plugin-css-modules": "^5.1.0"
+  }
 }

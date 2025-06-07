@@ -13,7 +13,7 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "allowImportingTsExtensions": true,
+   // "allowImportingTsExtensions": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
@@ -21,6 +21,8 @@
     "isolatedModules": false,
     "jsx": "react-jsx",
     "baseUrl": ".",
+    "typeRoots": ["./node_modules/@types", "./src/types"],
+    "types": ["node", "css-modules"],
     "paths": {
       "@app/*": ["./src/app/*"],
       "@shared/*": ["./src/shared/*"],
@@ -29,9 +31,10 @@
       "@entities/*": ["./src/entities/*"],
       "@widgets/*": ["./src/widgets/*"],
       "@src/*": ["./src/*"],
-    }
+    },
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
   "include": [
-    "src"
-  ]
+    "src",
+  ],
 }
