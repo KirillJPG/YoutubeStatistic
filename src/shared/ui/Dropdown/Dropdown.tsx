@@ -1,6 +1,7 @@
 import { styleUi } from "@shared/types/UiStyle"
+import clsx from "clsx"
 import { ReactNode, useState } from "react"
-import { Button } from "../Button/Button"
+import { Button } from "../Button/ui/Button"
 import styles from "./Dropdown.module.scss"
 
 interface DropdownMenu{
@@ -12,18 +13,19 @@ interface DropdownMenu{
 export function Dropdown({list,variant,select}:DropdownMenu){
     const [open,setOpen] = useState(false)
     return (
-        <div className="">
+        <div className={styles.dropdown}>
             <Button variant={variant} onClick={()=>setOpen(e=>!e)}>{select}</Button>
             {open && <DroppedMenu select={select} list={list} variant={variant} />}
         </div>
     )
 }
 function DroppedMenu({list,variant}:DropdownMenu){
-    console.log(list)
     return (
-        <div className="">
+        <div className={clsx(styles.dropdown_menu,styles[variant])}>
             {list.map(e=>(
-                <p key={e}>{e}</p>
+                <div className={styles.option} key={e}>
+                    {e}
+                </div>
             ))}
         </div>
     )
