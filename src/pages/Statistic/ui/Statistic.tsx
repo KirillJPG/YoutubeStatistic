@@ -1,10 +1,11 @@
-import { Dropdown } from "@shared/ui/Dropdown/Dropdown"
+import { useGetVideo } from "@entities/Video"
 import stlyes from "./statistic.module.scss"
 function Statistic(){
-    const list = Array(10).fill(1).map((e,id)=>Math.random())
+
+    const {data} = useGetVideo("jNQXAC9IVRw")
+    console.log(data)
     return (
         <div className={stlyes.text}>
-            <Dropdown variant="solid" select={2022} list={list}/>
         </div>
     )
 }

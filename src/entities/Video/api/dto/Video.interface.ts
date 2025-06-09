@@ -1,4 +1,4 @@
-export interface RootInterface {
+export interface IVideo {
   kind: string;
   etag: string;
   items: Item[];
