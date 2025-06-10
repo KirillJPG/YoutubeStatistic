@@ -5,7 +5,8 @@ function Statistic(){
     const {data} = useGetVideo("jNQXAC9IVRw")
     console.log(data)
     return (
-        <div className={stlyes.text}>
+        <div >
+            stat
         </div>
     )
 }

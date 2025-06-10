@@ -1,7 +1,7 @@
 import { styleUi } from "@shared/types/UiStyle"
 import clsx from "clsx"
 import { ReactNode, useState } from "react"
-import { Button } from "../Button/ui/Button"
+import { Button } from "../../Button/ui/Button"
 import styles from "./Dropdown.module.scss"
 
 interface DropdownMenu{

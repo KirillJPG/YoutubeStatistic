@@ -1,7 +1,7 @@
 .button{
     font-size: 14px;
     padding: 5px 12px;
-    border: 0px solid;
+    border: 2px solid transparent;
     cursor: pointer;
     transition: .4s;
     border-radius: 6px;
@@ -11,7 +11,7 @@
     }
     &:active{
         transition: .4s;
-        transform: scale(0.7 ,0.7);
+        transform: scale(0.8);
     }
 }
 

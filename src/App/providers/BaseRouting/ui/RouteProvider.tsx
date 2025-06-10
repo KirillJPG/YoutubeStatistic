@@ -4,7 +4,6 @@ import { Suspense } from "react";
 
 export function RouteProvider(){
     return (
-        <BrowserRouter>
             <Suspense fallback={<>loading</>}>
                 <Routes>
                     {Object.values(PagesList).map((page,id)=>(
@@ -12,6 +11,5 @@ export function RouteProvider(){
                     ))} 
                 </Routes> 
             </Suspense> 
-        </BrowserRouter>
     )
 }

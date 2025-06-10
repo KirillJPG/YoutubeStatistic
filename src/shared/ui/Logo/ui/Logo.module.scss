@@ -1,0 +1,40 @@
+.logo{
+    display: flex;
+    gap: 5px;
+    border-radius: 6px;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 0px 0px 10px var(--neutral500);
+}
+.img{
+    width: 42px;
+    height: 42px;
+    object-fit: cover;
+}
+
+.text{
+    font-size: 18px;
+    font-weight: 600;
+    min-width: 0;
+}
+.anim_text{
+    display: grid;
+    overflow: hidden;
+    transition: .5s linear grid-template-columns;
+    &.open{
+        animation: .5s both linear open;
+    }
+    &.noopen{
+        animation: .5s both linear reverse open;
+    }
+}
+@keyframes open {
+    0%{
+        grid-template-columns: 0fr;
+    } 
+    100%{
+       grid-template-columns: 1fr;
+   }
+}
