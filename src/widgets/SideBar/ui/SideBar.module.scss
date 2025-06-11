@@ -2,28 +2,33 @@
     position: fixed;
     z-index: 10;
     display: grid;
-    gap: 10px;
+    gap: 30px;
+    box-sizing: border-box;
     padding: 15px;
-    height: 100%;
+    height: 100vh;
     grid-auto-columns: max-content;
-    grid-auto-rows: max-content;
+    grid-template-rows: max-content auto max-content;
     box-shadow: 0px 0px 10px var(--neutral500);
     background: white;
     justify-content: center;
 }
+.links{
+    display: grid;
+    gap: 10px;
+    grid-auto-rows: max-content;
+}
 .background{
-    position: fixed;
     z-index: 9;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
-    opacity: 1;
-    transition: .5s;
+    transition: 0s;
     &.open{
+        transition: .9s;
+        position: fixed;
         backdrop-filter: blur(1px);
-        background: #000000;
-        opacity: 0.9;
+        background: #00000090;
     }
 }
 .text{
@@ -52,6 +57,13 @@
         animation: .5s both linear reverse open;
     }
 }
+.btn_fill{
+    background: var(--primary);
+}
+.btn_outline{
+    border-color: var(--primary);
+    color: var(--primary);
+}
 @keyframes open {
     0%{
         grid-template-columns: 0fr;
@@ -62,13 +74,17 @@
 }
 .link{
     display: grid;
-    gap: 10px;
     grid-auto-flow: column;
     align-items: center;
-    justify-items: center;
+    justify-content: center;
     grid-auto-columns: max-content;
     padding: 10px;
+    border-radius: 7px;
+    &.open{
+        gap: 10px;
+    }
     &.active{
+        background: var(--primary70);
         .img {
             fill: var(--primary);
             color: var(--primary);

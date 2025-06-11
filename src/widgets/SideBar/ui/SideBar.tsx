@@ -27,7 +27,9 @@ function Bar(){
             <div className={clsx(styles.bar)}>
                 {open && <Logo short={false}/>}
                 {!open && <Logo short={true}/>}
-                <LinkBar href={RoutePath.main} Icon={Statistic} text="Statistic"/>
+                <div className={styles.links}>
+                    <LinkBar href={RoutePath.main} Icon={Statistic} text="Statistic"/>
+                </div>
                 <ToggleBar/> 
             </div>
         </div>
@@ -38,12 +40,12 @@ function Bar(){
 
 function ToggleBar(){
     const {open,setOpen} = useStore()
-    return <Button onClick={()=>setOpen(!open)} variant={open ? "outline" : "solid" }>{open ? "close" : "open"}</Button>
+    return <Button onClick={()=>setOpen(!open)} variant={open ? "outline" : "solid" } className={open ? styles.btn_outline : styles.btn_fill}>{open ? "close" : "open"}</Button>
 }
 function LinkBar({Icon,href,text}:ILinkBar){
     const {open} = useStore()
     return (
-        <NavLink to={href} className={({isActive})=>clsx(styles.link,isActive && styles.active)}>
+        <NavLink to={href} className={({isActive})=>clsx(styles.link,isActive && styles.active,open && styles.open)}>
             <div className={styles.preview}>
                 <Icon className={styles.img}/>
             </div>
