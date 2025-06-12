@@ -1,0 +1,1 @@
+export type PartType = "statistics" | "snippet" | "contentDetails"

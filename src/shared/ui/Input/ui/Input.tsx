@@ -11,7 +11,7 @@ interface IInput extends InputHTMLAttributes<HTMLInputElement>{
 
 export function Input({variant = "borderless",icon,...props}:IInput){
     return (
-        <label className={clsx(styles.label,styles[variant])}>
+        <label className={clsx(styles.label,styles[variant],props.className)}>
             {icon}
             <input {...props} className={styles.input}/>
         </label>

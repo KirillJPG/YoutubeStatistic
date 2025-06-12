@@ -1,0 +1,44 @@
+.allInfo{
+    display: grid;
+    grid-auto-flow: column;
+    gap: 15px;
+    grid-template-columns: repeat(4,1fr);
+    user-select: none;
+}
+.info{
+    display: grid;
+    gap: 10px;
+    border-radius: 7px;
+    padding: 15px;
+}
+.green{
+    fill: var(--color3);
+    background: var(--color3_100);
+}
+.red{
+    fill: var(--second);
+    background: var(--second100);
+}
+.primary{
+    fill: var(--primary);
+    background: var(--primary100);
+}
+.title{
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--neutral900);
+}
+.data{
+    font-size: 32px;
+    font-weight: 700; 
+    color: var(--neutral900);
+}
+.svg{
+    padding: 10px;
+}
+.preview{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 7px;
+}

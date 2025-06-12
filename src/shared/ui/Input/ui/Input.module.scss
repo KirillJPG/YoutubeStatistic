@@ -3,9 +3,11 @@
     color: var(--neutral900);
     background: transparent;
     border: 1px solid transparent;
+    width: 100%;
 }
 .input::placeholder{
     color: var(--neutral900);
+    text-align: left;
     font-size: 14px;
 }
 .label:hover{
@@ -19,9 +21,8 @@
     transition: .5s;
     box-shadow: 0px 0px 10px transparent;
     border-radius: 6px;
-    width: fit-content;
     border: 1px solid transparent;
-    margin: 10px;
+    grid-template-columns: max-content auto;
     display: grid;
     grid-auto-flow: column;
     gap: 10px;

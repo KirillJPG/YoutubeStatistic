@@ -1,14 +1,15 @@
 import { apiInstanse, apiKeyParam } from "@shared/api/apiInstanse";
 import { useQuery } from "@tanstack/react-query";
 import { ErrorResponse } from "react-router-dom";
+import { Video } from "./dto/Video.interface";
 import { videoQueries } from "./video.query";
-import { IVideo } from "./dto/Video.interface";
+import { PartType } from "./videoPart";
 
 export function useGetVideo(id:string){
-    
     const get_request = async () =>{
+        if (!id) return null
         try{
-            const request = await apiInstanse.get<IVideo>("/videos"+apiKeyParam+"&part=snippet&id="+id) 
+            const request = await apiInstanse.get<Video>("/videos"+apiKeyParam+"&part=snippet,statistics,contentDetails&id="+id) 
             return request.data
         } catch(error) {
             console.log(error)
@@ -19,6 +20,7 @@ export function useGetVideo(id:string){
     }
     return useQuery({
         queryKey:videoQueries.getVideo(id),
+        retryDelay:1000*60*2,
         queryFn:get_request,
     })
 }

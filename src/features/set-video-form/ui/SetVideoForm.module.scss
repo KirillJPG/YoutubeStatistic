@@ -1,0 +1,9 @@
+.form{
+    display: grid;
+    grid-auto-flow: column;
+    gap: 20px;
+    grid-template-columns: minmax(auto,500px);
+    grid-auto-columns: max-content;
+    padding: 10px;
+    align-self: center;
+}
