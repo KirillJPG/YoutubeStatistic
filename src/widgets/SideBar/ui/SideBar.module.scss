@@ -23,11 +23,9 @@
     right: 0;
     top: 0;
     bottom: 0;
-    transition: 0s;
+    backdrop-filter: blur(1px);
     &.open{
-        transition: .9s;
         position: fixed;
-        backdrop-filter: blur(1px);
         background: #00000090;
     }
 }

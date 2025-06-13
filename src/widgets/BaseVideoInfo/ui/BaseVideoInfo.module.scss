@@ -34,11 +34,38 @@
     color: var(--neutral900);
 }
 .svg{
-    padding: 10px;
+    padding-left: 10px;
 }
 .preview{
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    object-fit: fill;
     border-radius: 7px;
+    border: 1px;
+    display: grid;  
+    justify-content: center;
+    align-content: center;
+    background: var(--neutral200);
+}
+.header{
+    display: grid;
+    gap: 15px;
+    grid-template-columns: 1fr auto;
+}
+.video_title{
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--neutral900);
+}
+.container{
+    display: grid;
+    gap: 30px;
+}
+.notfound{
+    display: grid;
+    justify-content: center;
+    position: relative;
+    min-height: 100%;
+    align-content: center;
+    font-size: 32px;
+    font-weight: 600;
 }

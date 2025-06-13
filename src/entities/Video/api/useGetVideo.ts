@@ -20,7 +20,7 @@ export function useGetVideo(id:string){
     }
     return useQuery({
         queryKey:videoQueries.getVideo(id),
-        retryDelay:1000*60*2,
+        refetchInterval:2000,
         queryFn:get_request,
     })
 }
