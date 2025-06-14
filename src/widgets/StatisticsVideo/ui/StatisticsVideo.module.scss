@@ -1,0 +1,7 @@
+.charts{
+    display: grid;
+    gap: 25px;
+    grid-auto-columns: max-content;
+    grid-auto-rows: max-content;
+    grid-auto-flow: column;
+}
