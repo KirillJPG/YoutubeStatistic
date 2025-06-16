@@ -1,5 +1,5 @@
-export {useGetSelectVideo} from "./api/useGetSelectVideo"
-export {useGetVideo} from "./api/useGetVideo"
+export {useGetSelectVideo} from "./lib/hooks/useGetSelectVideo"
+export {useGetVideo} from "./lib/hooks/useGetVideo"
 export {useStore as useVideoStore} from "./model/store"
 export {RateVideo} from "./ui/RateVideo"
 export {NewViewsChart} from "./ui/NewViewsChart"
