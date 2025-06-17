@@ -9,7 +9,6 @@ export function NewViewsChart(){
     const {selectVideo,statisticsVideos} = useStore()
     const data:VideoStatistic[] = [...statisticsVideos[selectVideo] ?? []]
     useEffect(()=>{
-        console.log(data)
         if (canvas.current && data){
             const chart = new NewViews(canvas.current,data)
             chart.updateFrame()

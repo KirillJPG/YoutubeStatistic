@@ -34,8 +34,8 @@ function ProgressBar({views,likes}:Rate){
     return (
         <>
         <svg viewBox="0 0 160 160" className={styles.progress_bar}>
-            <circle  r={radius} cx="80" cy="80" fill="transparent" stroke="var(--primary100)" stroke-width="12px"></circle>
-            <circle r={radius} cx="80" cy="80" fill="transparent" stroke="var(--primary)" stroke-linecap="round" stroke-width="15px" stroke-dasharray={dasharray} stroke-dashoffset={progress}></circle>
+            <circle  r={radius} cx="80" cy="80" fill="transparent" stroke="var(--second100)" stroke-width="12px"></circle>
+            <circle r={radius} cx="80" cy="80" fill="transparent" stroke="var(--second)" stroke-linecap="round" stroke-width="15px" stroke-dasharray={dasharray} stroke-dashoffset={progress}></circle>
         </svg> 
         </> 
     )
