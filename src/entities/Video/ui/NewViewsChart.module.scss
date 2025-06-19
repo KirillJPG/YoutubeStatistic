@@ -1,5 +1,35 @@
 .chart{
-    width: 100%;
+    width: 350px;
     height: 100%;
+}
+.title{
+    font-size: 18px;
+    font-weight: 500;
+}
+.bg{
+    display: grid;
+    gap: 10px;
+    position: relative;
+    background: var(--color3_100);
+    padding: 20px;
     border-radius: 7px;
+}
+.scroll{
+    height: 10px;
+    width: 100%;
+    position: relative;
+    appearance: none;
+    &::-webkit-slider-thumb{
+        appearance: none;
+        background: red;
+        width: 10px;
+        height: 30px;
+    }
+    &::-webkit-slider-runnable-track{
+        appearance: none;
+        background: green;
+        height: 30px;
+        width: 100%;
+        position: absolute;
+    }
 }

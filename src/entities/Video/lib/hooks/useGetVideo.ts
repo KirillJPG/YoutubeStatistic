@@ -13,21 +13,19 @@ export function useGetVideo(id:string){
         try{
             const response = await apiInstanse.get<Video>("/videos"+apiKeyParam+"&part=snippet,statistics,contentDetails&id="+id) 
             const {data} = response
+            console.log("update")
             if (data && data.items){
                 const videoStat = data.items[0].statistics
                 addStatistics({date:new Date(),...videoStat},selectVideo)
             }
             return response.data
-        } catch(error) {
-            console.log(error)
-            if (error as ErrorResponse){
-                console.log(error)
-            } 
+        } catch(error:any) {
+            console.log(error.response.data.error.message)
         }
     }
     return useQuery({
         queryKey:videoQueries.getVideo(id),
-        refetchInterval:2000,
+        refetchInterval:10000,
         queryFn:get_request,
     })
 }

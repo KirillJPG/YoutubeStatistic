@@ -13,6 +13,9 @@ type variant = "red" | "green" | "primary"
 export function BaseVideoInfo(){
     const {selectVideo} = useVideoStore()
     const {data,isLoading} = useGetVideo(selectVideo  )
+    if (!selectVideo){
+        return <div className="">Not Select</div>
+    }
     if (isLoading ){
         return (
             <LineLoading/>

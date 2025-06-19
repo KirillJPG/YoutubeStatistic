@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { NewViews } from "../lib/NewViews"
 import { VideoStatistic } from "../model/Statistic.interface"
 import { useStore } from "../model/store"
@@ -10,11 +10,14 @@ export function NewViewsChart(){
     const data:VideoStatistic[] = [...statisticsVideos[selectVideo] ?? []]
     useEffect(()=>{
         if (canvas.current && data){
-            const chart = new NewViews(canvas.current,data)
+            const chart = new NewViews(canvas.current,data,0)
             chart.updateFrame()
         }        
     },[canvas.current,data.length])
     return (
-        <canvas className={styles.chart} ref={canvas}>Aboba</canvas>
+        <div className={styles.bg}>
+            <div className={styles.title}>Views Statistic</div>
+            <canvas className={styles.chart} ref={canvas}>Aboba</canvas>
+        </div>
     )
 }

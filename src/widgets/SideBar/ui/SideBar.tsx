@@ -40,7 +40,7 @@ function Bar(){
 
 function ToggleBar(){
     const {open,setOpen} = useStore()
-    return <Button onClick={()=>setOpen(!open)} variant={open ? "outline" : "solid" } className={open ? styles.btn_outline : styles.btn_fill}>{open ? "close" : "open"}</Button>
+    return <Button onClick={()=> {setOpen(!open)}}variant={open ? "outline" : "solid" } className={open ? styles.btn_outline : styles.btn_fill}>{open ? "close" : "open"}</Button>
 }
 function LinkBar({Icon,href,text}:ILinkBar){
     const {open} = useStore()
