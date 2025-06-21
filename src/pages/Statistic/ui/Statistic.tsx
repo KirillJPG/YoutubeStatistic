@@ -1,6 +1,6 @@
 import { SetVideoForm } from "@features/set-video-form"
 import { BaseVideoInfo } from "@widgets/BaseVideoInfo"
-import { CommentsList } from "@widgets/CommentsList"
+import { CommentsStatistic } from "@widgets/CommentsList"
 import { StatisticsVideo } from "@widgets/StatisticsVideo"
 import styles from "./statistic.module.scss"
 function Statistic(){
@@ -10,7 +10,7 @@ function Statistic(){
                 <SetVideoForm/>
                 <BaseVideoInfo/>
                 <StatisticsVideo/>
-                <CommentsList/>
+                <CommentsStatistic/>
         </div>
     )
 }

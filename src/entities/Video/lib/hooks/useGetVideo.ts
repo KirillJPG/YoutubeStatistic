@@ -13,7 +13,6 @@ export function useGetVideo(id:string){
         try{
             const response = await apiInstanse.get<Video>("/videos"+apiKeyParam+"&part=snippet,statistics,contentDetails&id="+id) 
             const {data} = response
-            console.log("update")
             if (data && data.items){
                 const videoStat = data.items[0].statistics
                 addStatistics({date:new Date(),...videoStat},selectVideo)

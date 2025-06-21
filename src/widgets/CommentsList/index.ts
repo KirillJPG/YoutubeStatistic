@@ -1,1 +1,1 @@
-export {CommentsList} from "./ui/CommentsList"
+export {CommentsStatistic} from "./ui/CommentsList"
