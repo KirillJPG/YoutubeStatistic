@@ -1,6 +1,7 @@
 import { CommentData, useCommentStore, useGetListComments, useGetPages} from "@entities/Comment"
 import { useGetSelectVideo, useVideoStore } from "@entities/Video"
 import { Button } from "@shared/ui/Button/ui/Button"
+import { Spinner } from "@shared/ui/Spinner/ui/Spinner"
 import { useEffect } from "react"
 import styles from "./CommentsList.module.scss"
 
@@ -18,8 +19,13 @@ export function CommentsStatistic(){
 }
 function CommentsList(){
     const {selectVideo} = useVideoStore()
-    const {data} = useGetListComments(selectVideo,"snippet")
+    const {data,isLoading} = useGetListComments(selectVideo,"snippet")
     
+    if (isLoading) return (
+       <div className={styles.loading}>
+            <Spinner />
+       </div> 
+    )
     if (data?.items.length == 0 || !data?.items){
         return <div className="">
             Dont comments
@@ -54,11 +60,12 @@ function Pagination({totalComments}:{totalComments:number}){
     const {selectVideo} = useVideoStore()
     const {setPage,selectPage,pages} = useCommentStore()
     useGetPages(selectVideo,totalComments)
+    const viewPages = pages.filter((e,id)=>(id>selectPage-3 && id< selectPage+3)  || id ==0 || id==pages.length-1 ).slice(0,9)
     return (
 
         <div className={styles.pagination}>
-           {pages.map((v,id)=>(
-               <Button variant={selectPage==id ? "solid" : "outline"} onClick={()=>setPage(id)} key={v}>{id+1}</Button>
+           {viewPages.map((v,id)=>(
+               <Button variant={selectPage==pages.indexOf(v) ? "solid" : "outline"} onClick={()=>setPage(pages.indexOf(v))} key={v}>{pages.indexOf(v)+1}</Button>
             ))} 
         </div>
     )

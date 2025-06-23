@@ -8,7 +8,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     variant: styleUi,
 }
 export function Button({ variant,...props}: ButtonProps) {
-    const play = useAudio(audio,0.5)
+    const play = useAudio(audio,0.1)
     return (
         <button {...props} onMouseDown={()=>play()} className={clsx(styles.button,styles[variant],props.className)}/>
     )

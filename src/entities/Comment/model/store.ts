@@ -7,7 +7,7 @@ type States = {
 }
 type Actions = {
     setPage:(page:number) =>void,
-    setPages:(page:string[]) =>void,
+    setPages:(page:string) =>void,
     clearPages:()=>void,
 
 }
@@ -20,7 +20,7 @@ export const useStore = create<CommentStore>()(immer(persist(
             state.selectPage = page
         }),
         setPages:(page)=>set((state)=>{
-            state.pages = page
+            state.pages.push(page)
         }),
         clearPages:()=>set((state)=>{
             state.pages = [""]

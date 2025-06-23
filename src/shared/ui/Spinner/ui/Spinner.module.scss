@@ -1,0 +1,21 @@
+@property --progress {
+  syntax: '<number>'; /* <- defined as type number for the transition to work */
+  initial-value: 0;
+  inherits: true;
+}
+.spinner{
+    width: 100px;
+    height: 100px;
+    animation: infinite linear rotating 1s;
+    stroke: var(--primary);
+}
+@keyframes rotating {
+    0%{
+        --progress:157;
+        rotate: 0deg;
+    }    
+    100%{
+        rotate: 360deg;
+        --progress:-157;
+    }
+}

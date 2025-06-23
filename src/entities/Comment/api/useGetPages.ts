@@ -15,15 +15,16 @@ export function useGetPages(id:string,totalComments:number){
     },[id])
     return [request] 
 }
-async function getAllPages(id:string,setPage:(page:string[])=>void,totalComments:number){
+async function getAllPages(id:string,setPage:(page:string)=>void,totalComments:number){
     let page:string | undefined = "" 
     const newPages:string[] = [""]
-    for (let i =0; i<totalComments/100; i++){
+    for (let i =0; i<totalComments/100+1; i++){
         try{
-            const request:AxiosResponse<Comment,any> = await apiInstanse.get<Comment>("/commentThreads"+apiKeyParam+"&part=snippet&maxResults=100&videoId="+id+(page ? "&pageToken="+page :"" ))
+            const request:AxiosResponse<Comment,any> = await apiInstanse.get<Comment>("/commentThreads"+apiKeyParam+"&maxResults=100&videoId="+id+(page ? "&pageToken="+page :"" ))
             if (request.data.nextPageToken){
                 page =  extractPage(request.data.nextPageToken) 
                 newPages.push(page)
+                setPage(page)
             }else{
                 page = undefined
             }
@@ -31,7 +32,6 @@ async function getAllPages(id:string,setPage:(page:string[])=>void,totalComments
         catch(err){
         }
     }
-    setPage(newPages)
 
 }
 function extractPage(token:string){
